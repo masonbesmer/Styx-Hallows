@@ -1,11 +1,20 @@
 fileFormatVersion: 2
-guid: a45b04d9543cec0408ce1dc6690737cd
+guid: 953de56e2106e3a489a11448e888bfe4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: 5522812681064789136
-    second: Run
+      74: 5539831331247536789
+    second: Jump
+  - first:
+      74: 5124587291812490399
+    second: RunToJump.003
+  - first:
+      74: 5122886323718410971
+    second: JumpToRun.002
+  - first:
+      74: 6281953650394205071
+    second: Run.001
   externalObjects: {}
   materials:
     materialImportMode: 2
