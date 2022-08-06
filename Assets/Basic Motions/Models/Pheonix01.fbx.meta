@@ -1,17 +1,14 @@
 fileFormatVersion: 2
-guid: 7e123d49577cdd0448f34564adf786c9
+guid: 8c15af18e904e894cabaa306ac8ecc8a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: 5539831331247536789
-    second: Jump
+      74: 2783901431270726692
+    second: RunPhoenix
   - first:
-      74: -1033842149470757598
-    second: RunToJump
-  - first:
-      74: -3118004941345359894
-    second: JumpToRun
+      74: 2753418493742462537
+    second: FlyPheonix
   externalObjects: {}
   materials:
     materialImportMode: 2
