@@ -24,12 +24,15 @@ public class ThirdPersonMovement : MonoBehaviour
     bool gliding = false;
     //bool flying = false;
 
+    Animator animator;
+
     private float turnSmoothVelocity;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,21 @@ public class ThirdPersonMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+
+        bool jump = Input.GetButtonDown("Jump");
+
+        bool forward;
+        if ((Input.GetAxisRaw("Vertical") != 0) || (Input.GetAxisRaw("Horizontal") != 0))
+        {
+            forward = true;
+        }
+        else
+        {
+            forward = false;
+        }
+
+        animator.SetBool("Forward", forward);
+
 
         //check if the bird is grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -80,6 +98,15 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             gliding = true;
             velocity.y =  -glideSpeed;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            animator.SetBool("Jump", jump);
+        }
+        else if(isGrounded)
+        {
+            animator.SetBool("Jump", jump);
         }
 
         //Apply gravity and velocity of gravity to the Player
