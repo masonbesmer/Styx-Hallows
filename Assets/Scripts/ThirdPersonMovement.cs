@@ -35,34 +35,41 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+
         //check if the bird is grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        
+        /*
+        check for jump while jumping and not flying and start flying
+        if (!isGrounded && Input.GetButtonDown("Jump") && !flying)
+        {
+            StartFlying();
+        }
+        
+        //check if flying and descend
+        if (flying && Input.GetButton("Descend"))
+        {
+            //move controller down
+            controller.Move(Vector3.down * elevationSpeed * Time.deltaTime);
+        }
 
-        //check for jump while jumping and not flying and start flying
-        // if (!isGrounded && Input.GetButtonDown("Jump") && !flying)
-        // {
-        //     StartFlying();
-        // }
+        //check if flying and ascend
+        if (flying && Input.GetButton("Jump"))
+        {
+            //move controller up
+            controller.Move(Vector3.up * elevationSpeed * Time.deltaTime);
+        }
 
-        // //check if flying and descend
-        // if (flying && Input.GetButton("Descend"))
-        // {
-        //     //move controller down
-        //     controller.Move(Vector3.down * elevationSpeed * Time.deltaTime);
-        // }
-
-        // //check if flying and ascend
-        // if (flying && Input.GetButton("Jump"))
-        // {
-        //     //move controller up
-        //     controller.Move(Vector3.up * elevationSpeed * Time.deltaTime);
-        // }
-
-        // if (flying && isGrounded) {
-        //     StopFlying();
-        // }
+        if (flying && isGrounded) 
+        {
+            StopFlying();
+        }
+        */
  
-        //set birds velocity to -2 if grounded and not gliding
+        //Set velocity to -2 if grounded and not gliding
         if (isGrounded && velocity.y < 0)
         {
             gliding = false;
@@ -75,19 +82,14 @@ public class ThirdPersonMovement : MonoBehaviour
             velocity.y =  -glideSpeed;
         }
 
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
-
-        //apply gravity and velocity of gravity to the bird
+        //Apply gravity and velocity of gravity to the Player
         if (!gliding)
         {
             velocity.y += gravity * Time.deltaTime;
         }
         controller.Move(velocity * Time.deltaTime);
 
-        //let the bird jump if not grounded or flying
+        //Let the Player jump if not grounded or flying
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
