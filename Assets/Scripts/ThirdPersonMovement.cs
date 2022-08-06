@@ -54,7 +54,7 @@ public class ThirdPersonMovement : MonoBehaviour
             forward = false;
         }
 
-        animator.SetBool("Forward", forward);
+        //animator.SetBool("Forward", forward);
 
 
         //check if the bird is grounded
@@ -102,11 +102,11 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            animator.SetBool("Jump", jump);
+            //animator.SetBool("Jump", jump);
         }
         else if(isGrounded)
         {
-            animator.SetBool("Jump", jump);
+            //animator.SetBool("Jump", jump);
         }
 
         //Apply gravity and velocity of gravity to the Player
