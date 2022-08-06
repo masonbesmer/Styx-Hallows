@@ -1,35 +1,8 @@
 fileFormatVersion: 2
-guid: acd5f71f36ecffe4b9cb68701496f34c
+guid: 53d1d7d39711bb54e8ac17e34f261d45
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      74: 5539831331247536789
-    second: Jump
-  - first:
-      74: 5124587291812490399
-    second: RunToJump.003
-  - first:
-      74: 5122886323718410971
-    second: JumpToRun.002
-  - first:
-      74: 6281953650394205071
-    second: Run.001
-  - first:
-      74: 1079665108409675491
-    second: Armature|Jump
-  - first:
-      74: 23448875325813881
-    second: Armature|JumpToRun
-  - first:
-      74: -7551964380084998518
-    second: Armature|Run
-  - first:
-      74: 2996050170721346708
-    second: Armature|RunToJump
-  - first:
-      74: 3089753645659671229
-    second: BrokenLowWall01|Run
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
