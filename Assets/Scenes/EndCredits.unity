@@ -14853,6 +14853,7 @@ GameObject:
   - component: {fileID: 572427229}
   - component: {fileID: 572427228}
   - component: {fileID: 572427227}
+  - component: {fileID: 572427231}
   m_Layer: 0
   m_Name: Credits
   m_TagString: Untagged
@@ -14939,6 +14940,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!114 &572427231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572427226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cec06b84697fc549b62716009f38f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollspeedModifier: 1
+  waitTime: 5
+  rollTime: 35
 --- !u!1 &1304731187
 GameObject:
   m_ObjectHideFlags: 0
