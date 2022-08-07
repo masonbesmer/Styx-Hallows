@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7236134954384935529}
   - component: {fileID: 7236134954384935531}
   - component: {fileID: 7236134954384935524}
+  - component: {fileID: 6050183814475188783}
   m_Layer: 0
   m_Name: FairyThing
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7236134954384935530}
-  m_LocalRotation: {x: -0, y: 0.5572554, z: -0, w: 0.8303412}
+  m_LocalRotation: {x: 0, y: 0.55725247, z: 0, w: 0.8303431}
   m_LocalPosition: {x: -42.48, y: 4.363, z: -44.708}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
@@ -133,6 +134,7 @@ MonoBehaviour:
   detectionDistance: 10
   movementSpeed: 6
   rotationalDamp: 0.5
+  lifetime: 60
 --- !u!96 &7236134954384935524
 TrailRenderer:
   serializedVersion: 2
@@ -175,7 +177,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 20
+  m_Time: 5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -183,21 +185,39 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.3083823
-        value: 0.30612224
+        time: 0
+        value: 0.4375
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5084746
+        value: 0.203125
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.08463931, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.15566039, g: 0.3081535, b: 1, a: 1}
+      key1: {r: 1, g: 0.44072777, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -232,3 +252,19 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!54 &6050183814475188783
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236134954384935530}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
