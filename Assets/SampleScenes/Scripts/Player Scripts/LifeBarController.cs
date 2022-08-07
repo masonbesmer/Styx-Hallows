@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class LifeBarController : MonoBehaviour
 {
@@ -12,6 +12,8 @@ public class LifeBarController : MonoBehaviour
     public Image m_FillImage;                      // The image component of the slider.
     public Color m_FullEssColor = Color.green;    // The color the Life bar will be when on full life.
     public Color m_ZeroEssColor = Color.red;       // The color the Life bar will be when on no life.
+    public GameObject GatePortal;
+    public int nextLevel;
 
     public static float m_CurrentEss;              // How much Life the Player currently has.
 
@@ -102,7 +104,12 @@ public class LifeBarController : MonoBehaviour
         if (other.gameObject.CompareTag("Pyre") && m_CurrentEss >= 100)
         {
             TakeEss(100);
-            other.gameObject.SetActive(false);
+            other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            GatePortal.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        if(other.gameObject.CompareTag("Portal"))
+        {
+            SceneManager.LoadScene(nextLevel);
         }
     }
 }
