@@ -10,7 +10,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform cam;
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
-    public float gravity = -9.81f/2f;
+    public float gravity = -9.81f / 2f;
     public float jumpHeight = 3f;
     public float glideSpeed = 3f;
 
@@ -82,6 +82,8 @@ public class ThirdPersonMovement : MonoBehaviour
             controller.Move(velocity * Time.deltaTime);
         }
 
+        
+
         if (inside == false)
         {
             //Animations
@@ -105,15 +107,29 @@ public class ThirdPersonMovement : MonoBehaviour
             //Apply gravity and velocity of gravity to the Player
             if (!gliding)
             {
-                velocity.y += gravity * Time.deltaTime;
+                velocity.y += 4f * gravity * Time.deltaTime;
             }
-            controller.Move(velocity * Time.deltaTime);
 
             //Let the Player jump if grounded
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            if (Input.GetButton("Jump") && isGrounded && !Input.GetButton("Descend"))
             {
+                Debug.Log("Normal jump");
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
+
+            //Ouroboros Jumpdash
+            if (Input.GetButton("Jump") && isGrounded && Input.GetButton("Descend"))
+            {
+                Debug.Log("Jumpdash");
+                velocity.y = Mathf.Sqrt(jumpHeight * -8f * gravity);
+                speed = 36f;
+
+            }
+            else if (isGrounded)
+            {
+                speed = 6f;
+            }
+            controller.Move(velocity * Time.deltaTime);
 
             //Player Movement Algorithm
             if (direction.magnitude >= 0.1f)
@@ -146,7 +162,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (col.gameObject.tag == "Climbing Wall")
         {
             inside = !inside;
-            gravity = -9.81f / 2f;
+            gravity = -9.81f;
             velocity.y  = 0f * Time.deltaTime;
             velocity.z = 0f;
         }
