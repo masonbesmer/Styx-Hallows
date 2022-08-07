@@ -7,9 +7,14 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] float rayCastOffset = 0.5f;
     [SerializeField] float detectionDistance = 2f;
 
-    [SerializeField] Transform target;
+    Transform target;
     [SerializeField] float movementSpeed = 10f;
     [SerializeField] float rotationalDamp = .5f;
+
+    void Awake()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +28,7 @@ public class Pathfinder : MonoBehaviour
     {
         Vector3 pos = target.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
+        Debug.Log("Position: " + pos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationalDamp * Time.deltaTime);
     }
 
@@ -48,21 +54,30 @@ public class Pathfinder : MonoBehaviour
 
         if (Physics.Raycast(left, transform.forward, out hit, detectionDistance))
         {
-            raycastOffset += Vector3.right;
-        } else if (Physics.Raycast(right, transform.forward, out hit, detectionDistance))
-        {
-            raycastOffset -= Vector3.right;
+            raycastOffset += Vector3.up;
+            Debug.Log("Hit: " + hit.transform.name);
         }
+        else if (Physics.Raycast(right, transform.forward, out hit, detectionDistance))
+        {
+            raycastOffset -= Vector3.up;
+            Debug.Log("Hit: " + hit.transform.name);
+        }
+
         if (Physics.Raycast(up, transform.forward, out hit, detectionDistance))
         {
-            raycastOffset -= Vector3.forward;
+            raycastOffset += Vector3.right;
+            Debug.Log("Hit: " + hit.transform.name);
         }
         else if (Physics.Raycast(down, transform.forward, out hit, detectionDistance))
         {
-            raycastOffset += Vector3.forward;
+            raycastOffset -= Vector3.right;
+            Debug.Log("Hit: " + hit.transform.name);
         }
+
+        Debug.Log("Offset: " + raycastOffset);
+
         if (raycastOffset != Vector3.zero)
-            transform.Rotate(raycastOffset * 5f * Time.deltaTime);
+            transform.Rotate(raycastOffset * 10f * Time.deltaTime);
         else
             Turn();
     }
