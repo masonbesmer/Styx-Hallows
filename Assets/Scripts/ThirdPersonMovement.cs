@@ -54,12 +54,12 @@ public class ThirdPersonMovement : MonoBehaviour
             forward = false;
         }
 
-        //animator.SetBool("Forward", forward);
-
+        animator.SetBool("Forward", forward);
+        animator.SetBool("Jump", jump);
 
         //check if the bird is grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
+
         /*
         check for jump while jumping and not flying and start flying
         if (!isGrounded && Input.GetButtonDown("Jump") && !flying)
@@ -86,7 +86,7 @@ public class ThirdPersonMovement : MonoBehaviour
             StopFlying();
         }
         */
- 
+
         //Set velocity to -2 if grounded and not gliding
         if (isGrounded && velocity.y < 0)
         {
@@ -98,15 +98,6 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             gliding = true;
             velocity.y =  -glideSpeed;
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            //animator.SetBool("Jump", jump);
-        }
-        else if(isGrounded)
-        {
-            //animator.SetBool("Jump", jump);
         }
 
         //Apply gravity and velocity of gravity to the Player
