@@ -31,7 +31,7 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && MainMenuOpen != true)
+        if (Input.GetKeyDown(KeyCode.Escape) && MainMenuOpen != true && SettingsMenuOpen != true)
         {
             if (EscapeMenuOpen == false)
             {
