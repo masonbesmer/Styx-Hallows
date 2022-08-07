@@ -874,6 +874,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  velocity: {x: 0, y: 0, z: 0}
+  chController: {fileID: 0}
+  speedUpDown: 3.2
 --- !u!143 &631873478
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1088,7 +1091,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782961066}
-  m_LocalRotation: {x: 0.068948284, y: 0.000000017165437, z: -0.0000000011863507, w: 0.9976202}
+  m_LocalRotation: {x: 0.06894826, y: -0.00000001716543, z: 0.00000000118635, w: 0.9976202}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4426,7 +4429,6 @@ GameObject:
   - component: {fileID: 6454127380577848414}
   - component: {fileID: 6454127380577848413}
   - component: {fileID: 6454127380577848412}
-  - component: {fileID: 6454127380577848415}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4476,6 +4478,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  velocity: {x: 0, y: 0, z: 0}
+  chController: {fileID: 5970218416395998945}
+  speedUpDown: 3.2
 --- !u!143 &6454127380577848414
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4494,21 +4499,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 2, z: 0}
---- !u!114 &6454127380577848415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6454127380577848411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4205ae0b6884fd44a0383d70b159f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 6454127380577848414}
-  speedUpDown: 3.2
-  TPSInput: {fileID: 0}
 --- !u!1 &6540308084619654699
 GameObject:
   m_ObjectHideFlags: 0
