@@ -64,7 +64,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (inside == true && Input.GetKey("w"))
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            //velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             chController.transform.position += Vector3.up / speedUpDown;
             Debug.Log("Climbing Up");
             controller.Move(velocity * Time.deltaTime);
