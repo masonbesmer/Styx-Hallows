@@ -7753,15 +7753,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 13
-=======
-  m_RootOrder: 41
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 40
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &461698043
 PrefabInstance:
@@ -12172,8 +12164,6 @@ Transform:
   m_Children:
   - {fileID: 1843798820}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &737319341
@@ -12253,12 +12243,6 @@ Transform:
   - {fileID: 1576076792}
   m_Father: {fileID: 1787992458}
   m_RootOrder: 0
-=======
-  m_RootOrder: 36
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 35
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &739785486 stripped
 Transform:
@@ -14283,15 +14267,7 @@ Transform:
   - {fileID: 894485729}
   - {fileID: 312584675}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 6
-=======
-  m_RootOrder: 34
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 33
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &879070280 stripped
 Transform:
@@ -16821,15 +16797,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 9
-=======
-  m_RootOrder: 37
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 36
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1027188299 stripped
 Transform:
@@ -22591,15 +22559,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 10
-=======
-  m_RootOrder: 38
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 37
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1473760198 stripped
 Transform:
@@ -25975,15 +25935,7 @@ Transform:
   - {fileID: 1551405543}
   - {fileID: 819293586}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 11
-=======
-  m_RootOrder: 39
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 38
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1684781362
 PrefabInstance:
@@ -29132,15 +29084,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 5
-=======
-  m_RootOrder: 33
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 32
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1882515379
 MonoBehaviour:
@@ -30606,15 +30550,7 @@ Transform:
   - {fileID: 1399148608}
   - {fileID: 559769131}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 7
-=======
-  m_RootOrder: 35
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 34
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1951422378 stripped
 Transform:
@@ -31812,15 +31748,7 @@ Transform:
   - {fileID: 1564994784}
   - {fileID: 1189460088}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 12
-=======
-  m_RootOrder: 40
->>>>>>> 667e24046fae65c95190ae58af3a866d8adb68d3
-=======
-  m_RootOrder: 39
->>>>>>> b5e333f2cc3885239529fe2f59b75e64c503683b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2038719000 stripped
 Transform:
