@@ -4,6 +4,12 @@ ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
+      74: -1033842149470757598
+    second: RunToJump
+  - first:
+      74: -3118004941345359894
+    second: JumpToRun
+  - first:
       74: 5522812681064789136
     second: Run
   externalObjects: {}
