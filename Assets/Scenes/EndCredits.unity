@@ -14954,7 +14954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollspeedModifier: 1
   waitTime: 5
-  rollTime: 30
+  rollTime: 35
 --- !u!1 &1304731187
 GameObject:
   m_ObjectHideFlags: 0
