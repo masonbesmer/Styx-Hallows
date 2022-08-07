@@ -5,46 +5,49 @@ using UnityStandardAssets;
 
 public class ScarabClimb : MonoBehaviour
 {
-    public CharacterController controller;
-    bool inside = false;
-    public float speedUpDown = 3.2f;
-    public ThirdPersonMovement TPSInput;
+	public Transform chController;
+	bool inside = false;
+	public float speedUpDown = 3.2f;
+	public ThirdPersonMovement TPMInput;
+	Vector3 velocity;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        TPSInput = GetComponent<ThirdPersonMovement>();
-        inside = false;
-    }
+	void Start()
+	{
+		TPMInput = GetComponent<ThirdPersonMovement>();
+		inside = false;
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (inside == true && Input.GetAxisRaw("Vertical") > 0)
-        {
-            controller.transform.position += Vector3.up / speedUpDown;
-        }
-        if (inside == true && Input.GetAxisRaw("Vertical") < 0)
-        {
-            controller.transform.position += Vector3.down / speedUpDown;
-        }
-    }
+	void OnTriggerEnter(Collider col)
+	{
+		if (col.gameObject.tag == "Climbing Wall")
+		{
+			TPMInput.enabled = false;
+			inside = !inside;
+		}
+	}
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "Climbing Wall")
-        {
-            TPSInput.enabled = false;
-            inside = !inside;
-        }
-    }
+	void OnTriggerExit(Collider col)
+	{
+		if (col.gameObject.tag == "Climbing Wall")
+		{
+			TPMInput.enabled = true;
+			inside = !inside;
+		}
+	}
 
-    void OnTriggerExit(Collider col)
-    {
-        if (col.gameObject.tag == "Climbing Wall")
-        {
-            TPSInput.enabled = true;
-            inside = !inside;
-        }
-    }
+	void Update()
+	{
+		if (inside == true && Input.GetKey("w"))
+		{
+			velocity.y = Mathf.Sqrt(3f * -2f * -9.81f / 2f);
+			//chController.transform.position += Vector3.up / speedUpDown;
+			Debug.Log("Climbing Up");
+		}
+
+		if (inside == true && Input.GetKey("s"))
+		{
+			chController.transform.position += Vector3.down / speedUpDown;
+			Debug.Log("Climbing Down");
+		}
+	}
 }
