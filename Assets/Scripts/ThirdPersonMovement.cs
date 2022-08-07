@@ -64,16 +64,21 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (inside == true && Input.GetKey("w"))
         {
-            //velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            chController.transform.position += Vector3.up / speedUpDown;
+            velocity.y = jumpHeight * 2f;
+            //chController.transform.position += Vector3.up / speedUpDown;
             Debug.Log("Climbing Up");
             controller.Move(velocity * Time.deltaTime);
         }
 
         if (inside == true && Input.GetKey("s"))
         {
-            chController.transform.position += Vector3.down / speedUpDown;
+            velocity.y = -1 * (jumpHeight * 2f);
+            //chController.transform.position += Vector3.down / speedUpDown;
             Debug.Log("Climbing Down");
+            if(isGrounded)
+            {
+                velocity.z = -1 * (jumpHeight * 2f);
+            }
             controller.Move(velocity * Time.deltaTime);
         }
 
@@ -143,6 +148,7 @@ public class ThirdPersonMovement : MonoBehaviour
             inside = !inside;
             gravity = -9.81f / 2f;
             velocity.y  = 0f * Time.deltaTime;
+            velocity.z = 0f;
         }
     }
 }
