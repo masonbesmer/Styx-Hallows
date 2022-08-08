@@ -10,10 +10,13 @@ public class Pathfinder : MonoBehaviour
     Transform target;
     [SerializeField] float movementSpeed = 10f;
     [SerializeField] float rotationalDamp = .5f;
+    [SerializeField] float lifetime = 30f;
+    float timer;
 
     void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        StartTimer();
     }
 
     // Update is called once per frame
@@ -22,6 +25,14 @@ public class Pathfinder : MonoBehaviour
         Pathfinding();
         //Turn();
         Move();
+        if (timer <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
     }
 
     void Turn()
@@ -80,5 +91,10 @@ public class Pathfinder : MonoBehaviour
             transform.Rotate(raycastOffset * 10f * Time.deltaTime);
         else
             Turn();
+    }
+
+    void StartTimer()
+    {
+        timer = lifetime;
     }
 }

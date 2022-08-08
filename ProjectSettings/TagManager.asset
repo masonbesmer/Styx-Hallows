@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Fairy
   - Climbing Wall
+  - Essence
+  - Pyre
+  - Portal
   layers:
   - Default
   - TransparentFX

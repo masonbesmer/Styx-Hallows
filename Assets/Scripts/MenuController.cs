@@ -6,32 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject MainMenu;
     public GameObject EscMenu;
     public GameObject SettingsMenu;
     public GameObject PlayerHud;
     public GameObject Player;
 
     public bool EscapeMenuOpen;
-    public bool MainMenuOpen;
     public bool SettingsMenuOpen;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Start");
-        Time.timeScale = 0;
+        Time.timeScale = 1;
         EscapeMenuOpen = false;
         SettingsMenuOpen = false;
-        MainMenuOpen = true;
-        (Player.GetComponent("ThirdPersonMovement") as MonoBehaviour).enabled = false;
-        Cursor.lockState = CursorLockMode.None;
-        MainMenu.SetActive(true);
+        (Player.GetComponent("ThirdPersonMovement") as MonoBehaviour).enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && MainMenuOpen != true)
+        if (Input.GetKeyDown(KeyCode.Escape) && SettingsMenuOpen != true)
         {
             if (EscapeMenuOpen == false)
             {
@@ -49,20 +45,10 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public void Play()
-    {
-        Debug.Log("Play");
-        MainMenu.SetActive(false);
-        MainMenuOpen = false;
-        Time.timeScale = 1;
-        (Player.GetComponent("ThirdPersonMovement") as MonoBehaviour).enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
     public void Exit()
     {
         Application.Quit(); //For actual Application
-        UnityEditor.EditorApplication.isPlaying = false; //For Editor
+        //UnityEditor.EditorApplication.isPlaying = false; //For Editor
     }
 
     public void Resume()
@@ -78,15 +64,7 @@ public class MenuController : MonoBehaviour
     public void Settings()
     {
         Debug.Log("Settings");
-        if (EscapeMenuOpen == true)
-        {
-            EscMenu.SetActive(false);
-        }
-        else
-        {
-            MainMenu.SetActive(false);
-        }
-
+        EscMenu.SetActive(false);
         SettingsMenu.SetActive(true);
         SettingsMenuOpen = true;
     }
@@ -96,14 +74,6 @@ public class MenuController : MonoBehaviour
         Debug.Log("Save and Exit");
         SettingsMenu.SetActive(false);
         SettingsMenuOpen = false;
-
-        if (EscapeMenuOpen == true)
-        {
-            EscMenu.SetActive(true);
-        }
-        else
-        {
-            MainMenu.SetActive(true);
-        }
+        EscMenu.SetActive(true);
     }
 }
